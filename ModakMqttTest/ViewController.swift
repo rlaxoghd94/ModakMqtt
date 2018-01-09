@@ -27,7 +27,7 @@ class ViewController: UIViewController {
         conn.start()
         let ch = conn.createChannel()
         let x = ch.topic("topic_logs")
-        let msg = "hi"
+        let msg = "hi1"
         x.publish(msg.data(using: .utf8))
         print("Sent '\(msg)'")
         conn.close()

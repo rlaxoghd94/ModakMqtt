@@ -14,6 +14,9 @@
 		15C37EE820049D9500FC6090 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 15C37EE620049D9500FC6090 /* LaunchScreen.storyboard */; };
 		15C37EF320049D9500FC6090 /* ModakMqttTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C37EF220049D9500FC6090 /* ModakMqttTestTests.swift */; };
 		15C37EFE20049D9500FC6090 /* ModakMqttTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15C37EFD20049D9500FC6090 /* ModakMqttTestUITests.swift */; };
+		A5F5D9732004A5FC00EA2F5F /* RMQClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5F5D9722004A5FC00EA2F5F /* RMQClient.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		A5F5D9752004A85400EA2F5F /* RMQClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5F5D9742004A85300EA2F5F /* RMQClient.framework */; };
+		A5F5D9762004A85400EA2F5F /* RMQClient.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A5F5D9742004A85300EA2F5F /* RMQClient.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +36,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		A5F5D9772004A85400EA2F5F /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				A5F5D9762004A85400EA2F5F /* RMQClient.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		15C37EDA20049D9400FC6090 /* ModakMqttTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ModakMqttTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		15C37EDD20049D9400FC6090 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +64,8 @@
 		15C37EF920049D9500FC6090 /* ModakMqttTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ModakMqttTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		15C37EFD20049D9500FC6090 /* ModakMqttTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModakMqttTestUITests.swift; sourceTree = "<group>"; };
 		15C37EFF20049D9500FC6090 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A5F5D9722004A5FC00EA2F5F /* RMQClient.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RMQClient.framework; path = Carthage/Build/iOS/RMQClient.framework; sourceTree = "<group>"; };
+		A5F5D9742004A85300EA2F5F /* RMQClient.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RMQClient.framework; path = Carthage/Build/iOS/RMQClient.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +73,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5F5D9752004A85400EA2F5F /* RMQClient.framework in Frameworks */,
+				A5F5D9732004A5FC00EA2F5F /* RMQClient.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,10 +98,12 @@
 		15C37ED120049D9400FC6090 = {
 			isa = PBXGroup;
 			children = (
+				A5F5D9742004A85300EA2F5F /* RMQClient.framework */,
 				15C37EDC20049D9400FC6090 /* ModakMqttTest */,
 				15C37EF120049D9500FC6090 /* ModakMqttTestTests */,
 				15C37EFC20049D9500FC6090 /* ModakMqttTestUITests */,
 				15C37EDB20049D9400FC6090 /* Products */,
+				A5F5D9712004A5FB00EA2F5F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -125,6 +148,14 @@
 			path = ModakMqttTestUITests;
 			sourceTree = "<group>";
 		};
+		A5F5D9712004A5FB00EA2F5F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A5F5D9722004A5FC00EA2F5F /* RMQClient.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,6 +166,7 @@
 				15C37ED620049D9400FC6090 /* Sources */,
 				15C37ED720049D9400FC6090 /* Frameworks */,
 				15C37ED820049D9400FC6090 /* Resources */,
+				A5F5D9772004A85400EA2F5F /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -427,6 +459,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = ModakMqttTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = exp.ModakMqttTest;
@@ -441,6 +477,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = ModakMqttTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = exp.ModakMqttTest;
